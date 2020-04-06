@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutteramazingiamges/constants/index.dart';
+import 'package:flutteramazingiamges/mvp/models/search_by_keywork_model.dart';
 
 import 'http_api.dart';
 
@@ -31,31 +33,42 @@ class DioUtils {
       contentType: 'application/json',
     );
     _dio = new Dio(options);
+    _dio.interceptors.add(headerOption());
   }
 
   Future<Response> asyncRequestNetwork(
     Method method,
     String url, {
     CancelToken cancelToken,
-    Function(Response t) onSuccess,
+    Function(Response res) onSuccess,
+    Map<String, dynamic> queryParameters,
     Function(dynamic t) onError,
   }) async {
-    print('<> Start connection :< path>--------<> $url');
     try {
       Response response = await _dio.request(
         url,
+        queryParameters: queryParameters,
         cancelToken: cancelToken,
       );
       onSuccess(response);
-      print('<> Finished connection :<>--------<> ');
     } catch (e) {
       onError(e);
     }
   }
+
+  Type typeOf<T>() => T;
 }
 
 Map<String, dynamic> parseData(String data) {
   return json.decode(data);
+}
+
+class headerOption extends Interceptor {
+  @override
+  Future onRequest(RequestOptions options) {
+    options.headers.addAll({'Authorization': '$API_KEY'});
+    return super.onRequest(options);
+  }
 }
 
 enum Method { get, post, put, patch, delete, head }

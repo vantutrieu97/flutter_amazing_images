@@ -3,6 +3,7 @@ import 'package:flutteramazingiamges/net/index.dart';
 
 import 'base_presenter.dart';
 import 'base_view.dart';
+import 'models/search_by_keywork_model.dart';
 
 class BasePagePresenter<V extends BaseView> extends BasePresenter {
   V view;
@@ -40,12 +41,14 @@ class BasePagePresenter<V extends BaseView> extends BasePresenter {
   void asyncRequestNetwork(
     Method method,
     String url, {
+    Map<String, dynamic> queryParameters,
     Function(Response response) onSuccess,
     Function(dynamic response) onError,
   }) async {
     await DioUtils.instance.asyncRequestNetwork(
       method,
       url,
+      queryParameters: queryParameters,
       onSuccess: (response) {
         onSuccess(response);
       },
