@@ -21,4 +21,11 @@ class ProviderSetup {
       child: SecondPage(),
     );
   }
+
+  ChangeNotifierProvider<HomeProvider> homePage() {
+    return ChangeNotifierProvider(
+      create: (context) => HomeProvider(),
+      child: HomePage(),
+    );
+  }
 }
