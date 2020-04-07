@@ -11,7 +11,7 @@ class SecondPagePresenter extends BasePagePresenter<SecondPageState> {
   getPhotoBySearch({query: 'cat', perPage: 12, page: 1}) {
     asyncRequestNetwork(
       Method.get,
-      HttpApi.SEARCH,
+      HttpApi.SEARCH_IMAGE,
       queryParameters: {
         'query': '$query',
         'per_page': '$perPage',
