@@ -34,7 +34,7 @@ class PhotoShimmer extends StatelessWidget {
               ),
             ),
             Container(
-              height: 44,
+              height: 60,
               padding: EdgeInsets.symmetric(horizontal: 12),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -43,7 +43,7 @@ class PhotoShimmer extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       CircleAvatar(
-                        radius: 16.0,
+                        radius: 20.0,
                       ),
                       SizedBox(
                         width: 6,
@@ -52,7 +52,14 @@ class PhotoShimmer extends StatelessWidget {
                         margin: EdgeInsets.only(bottom: 4),
                         width: screenWidth / 3,
                         height: 8,
-                        color: Colors.white,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              10,
+                            ),
+                          ),
+                        ),
                       )
                     ],
                   ),
@@ -61,13 +68,13 @@ class PhotoShimmer extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       CircleAvatar(
-                        radius: 16.0,
+                        radius: 20.0,
                       ),
                       SizedBox(
                         width: 6,
                       ),
                       CircleAvatar(
-                        radius: 16.0,
+                        radius: 20.0,
                       ),
                     ],
                   ),
