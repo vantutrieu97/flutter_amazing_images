@@ -3,7 +3,6 @@ import 'package:flutteramazingiamges/net/index.dart';
 
 import 'base_presenter.dart';
 import 'base_view.dart';
-import 'models/search_by_keywork_model.dart';
 
 class BasePagePresenter<V extends BaseView> extends BasePresenter {
   V view;

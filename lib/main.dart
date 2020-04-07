@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutteramazingiamges/provider/index.dart';
-import 'package:flutteramazingiamges/ui/pages/index.dart';
 
 void main() => runApp(MyApp());
 
