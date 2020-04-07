@@ -1,12 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutteramazingiamges/constants/index.dart';
 import 'package:flutteramazingiamges/constants/measure.dart';
 import 'package:flutteramazingiamges/mvp/models/search_by_keywork_model.dart';
 
 // ignore: non_constant_identifier_names
 Card DisplayBasicInfoOfPhoto(Photo photo,double screenWidth) {
-  final _fontDefault = Color(0xff585656);
+  final _fontDefault = DEFAULT_UN_SELECTED_ICON;
   return Card(
     margin: EdgeInsets.symmetric(vertical: 8,horizontal: 6),
     child: Column(
