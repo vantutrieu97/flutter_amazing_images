@@ -28,4 +28,11 @@ class ProviderSetup {
       child: HomePage(),
     );
   }
+
+  ChangeNotifierProvider<TrendingProvider> trendingPage() {
+    return ChangeNotifierProvider(
+      create: (context) => TrendingProvider(),
+      child: TrendingPage(),
+    );
+  }
 }
