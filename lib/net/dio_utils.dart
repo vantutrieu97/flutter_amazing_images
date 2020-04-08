@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutteramazingiamges/constants/index.dart';
-import 'package:flutteramazingiamges/mvp/models/search_by_keywork_model.dart';
 
 import 'http_api.dart';
 

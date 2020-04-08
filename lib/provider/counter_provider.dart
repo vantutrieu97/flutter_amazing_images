@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutteramazingiamges/mvp/models/search_by_keywork_model.dart';
+import 'package:flutteramazingiamges/mvp/models/index.dart';
 
 class CounterProvider extends ChangeNotifier {
   int _counter = 0;
