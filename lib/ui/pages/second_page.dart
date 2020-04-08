@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutteramazingiamges/mvp/base_state.dart';
-import 'package:flutteramazingiamges/mvp/models/search_by_keywork_model.dart';
+import 'package:flutteramazingiamges/mvp/models/index.dart';
 import 'package:flutteramazingiamges/mvp/presenters/second_page_presenter.dart';
 import 'package:flutteramazingiamges/provider/index.dart';
 import 'package:flutteramazingiamges/ui/widgets/display_basic_info_of_photo.dart';
@@ -78,7 +78,7 @@ class SecondPageState extends BaseState<SecondPage, SecondPagePresenter> {
   void searchDataFromSearch(int totalResults, int page, int perPage,
       List<Photo> photos, String nextPageURL) {
     final provider = Provider.of<CounterProvider>(context, listen: false);
-    _totalPages = (totalResults / perPage).toInt();
+    _totalPages = totalResults ~/ perPage;
     _page = page;
     if (_page == 1 && _refreshController.isRefresh) {
       _refreshController.refreshCompleted();
