@@ -3,24 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutteramazingiamges/constants/index.dart';
 import 'package:flutteramazingiamges/constants/measure.dart';
-import 'package:flutteramazingiamges/mvp/models/search_by_keywork_model.dart';
+import 'package:flutteramazingiamges/mvp/models/index.dart';
 
 // ignore: non_constant_identifier_names
-Card DisplayBasicInfoOfPhoto(Photo photo,double screenWidth) {
+Card DisplayBasicInfoOfPhoto(Photo photo) {
   final _fontDefault = DEFAULT_UN_SELECTED_ICON;
   return Card(
-    margin: EdgeInsets.symmetric(vertical: 8,horizontal: 6),
+    margin: EdgeInsets.symmetric(vertical: 8,horizontal: 8),
     child: Column(
       children: <Widget>[
         Container(
-          width: screenWidth,
+          width: double.infinity,
           child: ClipRRect(
             borderRadius: BorderRadius.all(
               Radius.circular(DEFAULT_RADIUS),
             ),
             child: CachedNetworkImage(
-              imageUrl: photo.src.large,
-              errorWidget: (context, url, error) => Icon(Icons.error),
+              imageUrl: photo.src.large2X,
               fit: BoxFit.contain,
             ),
           ),

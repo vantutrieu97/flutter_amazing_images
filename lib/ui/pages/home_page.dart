@@ -29,8 +29,10 @@ class HomePageState extends BaseState<HomePage, HomePresenter> {
         constraints: BoxConstraints.expand(),
         color: Colors.white,
         child: PageView(
+          physics: NeverScrollableScrollPhysics(),
+          pageSnapping: false,
           children: <Widget>[
-            ProviderSetup.instance().secondPage(),
+            ProviderSetup.instance().trendingPage(),
             ProviderSetup.instance().secondPage(),
             ProviderSetup.instance().secondPage(),
             ProviderSetup.instance().secondPage(),
@@ -38,54 +40,89 @@ class HomePageState extends BaseState<HomePage, HomePresenter> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 44,
+        height: 54,
         color: Colors.white,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Column(
           children: <Widget>[
-            MaterialButton(
-              onPressed: () {
-                provider.changeTab(0);
-              },
-              child: SvgPicture.asset(
-                'assets/icons/home-outline.svg',
-                color: currentTab == 0
-                    ? DEFAULT_SELECTED_ICON
-                    : DEFAULT_UN_SELECTED_ICON,
-              ),
+            Container(
+              width: double.infinity,
+              height: 0.5,
+              color: Colors.black12,
             ),
-            MaterialButton(
-              onPressed: () {
-                provider.changeTab(1);
-              },
-              child: SvgPicture.asset(
-                'assets/icons/compass-outline.svg',
-                color: currentTab == 1
-                    ? DEFAULT_SELECTED_ICON
-                    : DEFAULT_UN_SELECTED_ICON,
-              ),
-            ),
-            MaterialButton(
-              onPressed: () {
-                provider.changeTab(2);
-              },
-              child: SvgPicture.asset(
-                'assets/icons/upload-outline.svg',
-                color: currentTab == 2
-                    ? DEFAULT_SELECTED_ICON
-                    : DEFAULT_UN_SELECTED_ICON,
-              ),
-            ),
-            MaterialButton(
-              onPressed: () {
-                provider.changeTab(3);
-              },
-              child: SvgPicture.asset(
-                'assets/icons/account-outline.svg',
-                color: currentTab == 3
-                    ? DEFAULT_SELECTED_ICON
-                    : DEFAULT_UN_SELECTED_ICON,
+            Expanded(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  MaterialButton(
+                    onPressed: () {
+                      provider.changeTab(0);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(0),
+                      margin: EdgeInsets.all(0),
+                      width: 36,
+                      height: 36,
+                      child: SvgPicture.asset(
+                        'assets/icons/home-outline.svg',
+                        color: currentTab == 0
+                            ? DEFAULT_SELECTED_ICON
+                            : DEFAULT_UN_SELECTED_ICON,
+                      ),
+                    ),
+                  ),
+                  MaterialButton(
+                    onPressed: () {
+                      provider.changeTab(1);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(0),
+                      margin: EdgeInsets.all(0),
+                      width: 36,
+                      height: 36,
+                      child: SvgPicture.asset(
+                        'assets/icons/compass-outline.svg',
+                        color: currentTab == 1
+                            ? DEFAULT_SELECTED_ICON
+                            : DEFAULT_UN_SELECTED_ICON,
+                      ),
+                    ),
+                  ),
+                  MaterialButton(
+                    onPressed: () {
+                      provider.changeTab(2);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(0),
+                      margin: EdgeInsets.all(0),
+                      width: 36,
+                      height: 36,
+                      child: SvgPicture.asset(
+                        'assets/icons/upload-outline.svg',
+                        color: currentTab == 2
+                            ? DEFAULT_SELECTED_ICON
+                            : DEFAULT_UN_SELECTED_ICON,
+                      ),
+                    ),
+                  ),
+                  MaterialButton(
+                    onPressed: () {
+                      provider.changeTab(3);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(0),
+                      margin: EdgeInsets.all(0),
+                      width: 36,
+                      height: 36,
+                      child: SvgPicture.asset(
+                        'assets/icons/account-outline.svg',
+                        color: currentTab == 3
+                            ? DEFAULT_SELECTED_ICON
+                            : DEFAULT_UN_SELECTED_ICON,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

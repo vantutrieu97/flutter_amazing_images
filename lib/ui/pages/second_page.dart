@@ -51,7 +51,7 @@ class SecondPageState extends BaseState<SecondPage, SecondPagePresenter> {
           child: ListView.builder(
             itemBuilder: (context, index) {
               Photo photo = provider.photos[index];
-              return DisplayBasicInfoOfPhoto(photo, _screenWidth);
+              return DisplayBasicInfoOfPhoto(photo);
             },
             itemCount: provider.photos.length,
           ),
@@ -62,7 +62,7 @@ class SecondPageState extends BaseState<SecondPage, SecondPagePresenter> {
           presenter.getPhotoBySearch();
 //          presenter.incrementCounter();
         },
-        child:  SvgPicture.asset(
+        child: SvgPicture.asset(
           'assets/icons/reload.svg',
           color: Colors.white,
         ),
